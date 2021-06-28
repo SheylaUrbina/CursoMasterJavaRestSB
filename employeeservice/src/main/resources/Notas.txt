@@ -1,0 +1,57 @@
+Chapter #55
+implementar hateoas
+ //EntityModel add aditional information like link Chapter 56: Implement Hateoas
+
+ Chapter #56
+ content negotiation
+ Agregando al pom.xml dependecia para aplicar format xml al response obtenido, a través del headers
+ key = Accept
+ Value = application/xml
+
+ <dependency>
+             <groupId>com.fasterxml.jackson.dataformat</groupId>
+             <artifactId>jackson-dataformat-xml</artifactId>
+         </dependency>
+
+Section 3
+Chapter #56 - Swagger Implementation
+swagger documentation for rest application
+add dependecy in pom.xml
+springfox starter maven - add a dependency de pom.xml
+google = io.springfox starter
+
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-boot-starter</artifactId>
+    <version>3.0.0</version>
+</dependency>
+URL: http://localhost:8002/v2/api-docs
+-Version swagger
+-informacion basica
+-el host
+-basepath
+-tags: contienen todos los controladores, en donde esta el basic-error-controller que es el por defecto y los que se han creado en la aplicacion
+
+-paths: metodos disponibles en la aplicacion, produces indica que si espera parametro o no, respuestas esperadas, schema: lo que contiene la respuesta
+
+-definition
+
+Chapter #61 Implementing actuator for monitoring
+1. Starter actuator - collect all API details
+2. hal browser - to visualize the dat
+
+http://localhost:8002/actuator
+http://localhost:8002/browser/index.html
+
+
+Chapter #63: Implement Dynamic filter for Rest API's
+
+Chapter #64: Implement Simple Username Password Authentication
+Add to pom.xml dependency
+ <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        habilita automaticamente autenticacion basica
+
