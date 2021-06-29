@@ -3,3 +3,7 @@ Agregando txt notas para anotaciones
 Cursos
 Bases de datos con MySQL y SQLite (6 Horas)
 Database Engineer/DBA - (PostgreSQL, IBM-DB2,MariaDB,NoSQL) = 18.5 Horas
+
+Dos formas de conectarse a la base de datos
+1 EntityManager: configuracion manual
+2 JpaRepository: comunicacion interna to EntityManager
