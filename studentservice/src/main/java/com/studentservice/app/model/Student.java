@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonFilter;
 
 import javax.persistence.*;
 
+import java.util.List;
+
 @JsonFilter("Student")
 @Entity
 public class Student {
@@ -14,10 +16,21 @@ public class Student {
     private String studentname;
     private int age;
 
+    @OneToMany(mappedBy = "student")
+    List<Book> allBooks;
+
     public Student() {
     }
 
-    public Student(long id,String studentname, int age) {
+    public List<Book> getAllBooks() {
+        return allBooks;
+    }
+
+    public void setAllBooks(List<Book> allBooks) {
+        this.allBooks = allBooks;
+    }
+
+    public Student(long id, String studentname, int age) {
         this.id = id;
         this.studentname = studentname;
         this.age = age;

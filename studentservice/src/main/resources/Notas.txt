@@ -7,3 +7,11 @@ Database Engineer/DBA - (PostgreSQL, IBM-DB2,MariaDB,NoSQL) = 18.5 Horas
 Dos formas de conectarse a la base de datos
 1 EntityManager: configuracion manual
 2 JpaRepository: comunicacion interna to EntityManager
+
+insert into student(id,student_name,age) values(1, 'Ana',15);
+insert into student(id,student_name,age) values( 2,'Elsa',20);
+insert into student(id,student_name,age) values(3,'Olaf',15);
+insert into book values(102,'Microservicios',2);
+insert into book values(103,'Docker',2);
+insert into book values(104,'SQL',1);
+insert into book values(105,'MONGODB',3);
