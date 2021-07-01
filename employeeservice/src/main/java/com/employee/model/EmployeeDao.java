@@ -11,13 +11,13 @@ public class EmployeeDao {
     static List<Employee> list = new ArrayList<>();
 
     static {
-        list.add(new Employee(1234,"Darling","darling@gmail.com"));
-        list.add(new Employee(45,"Maria","maria@gmail.com"));
-        list.add(new Employee(58,"John","john@gmail.com"));
-        list.add(new Employee(80,"Marta","marta@gmail.com"));
-        list.add(new Employee(98,"Rosa","rosa@gmail.com"));
-        list.add(new Employee(198,"Jack","jack@gmail.com"));
-        list.add(new Employee(8,"Jim","jim@gmail.com"));
+        list.add(new Employee((long) 1234,"Darling","darling@gmail.com"));
+        list.add(new Employee((long) 45,"Maria","maria@gmail.com"));
+        list.add(new Employee((long) 58,"John","john@gmail.com"));
+        list.add(new Employee((long) 80,"Marta","marta@gmail.com"));
+        list.add(new Employee((long) 98,"Rosa","rosa@gmail.com"));
+        list.add(new Employee((long) 198,"Jack","jack@gmail.com"));
+        list.add(new Employee((long) 8,"Jim","jim@gmail.com"));
 
     }
 
@@ -26,11 +26,11 @@ public class EmployeeDao {
     }
 
     public Employee getEmployeeById(int empId) {
-        return list.stream().filter(emp -> emp.getEmployeId()== empId).findAny().orElse(null);
+        return list.stream().filter(emp -> emp.getId()== empId).findAny().orElse(null);
     }
 
     public Employee saveEmployee(Employee emp) {
-        emp.setEmployeId(list.size()+1);
+        emp.setId((long)list.size()+1);
         list.add(emp);
         return emp;
     }
@@ -39,7 +39,7 @@ public class EmployeeDao {
         Iterator<Employee> iterator = list.iterator();
         while (iterator.hasNext()) {
             Employee emp =iterator.next();
-            if(empId == emp.getEmployeId()){
+            if(empId == emp.getId()){
                 iterator.remove();
                 return emp;
             }

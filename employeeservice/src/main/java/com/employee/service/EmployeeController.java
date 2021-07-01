@@ -43,7 +43,7 @@ public class EmployeeController {
         Employee newEmployee = service.saveEmployee(emp);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("{employeeId}")
-                .buildAndExpand(newEmployee.getEmployeId())
+                .buildAndExpand(newEmployee.getId())
                 .toUri();
         return ResponseEntity.created(uri).build();
     }
