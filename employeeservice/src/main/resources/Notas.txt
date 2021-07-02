@@ -1,6 +1,10 @@
 Chapter #55
 implementar hateoas
  //EntityModel add aditional information like link Chapter 56: Implement Hateoas
+ aqui se usan los link
+  EntityModel<Employee> model = EntityModel.of(employee);
+         Link link = WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).getAll()).withRel("all-employees");
+
 
  Chapter #56
  content negotiation

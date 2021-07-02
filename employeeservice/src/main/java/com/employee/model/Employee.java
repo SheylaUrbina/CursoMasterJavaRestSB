@@ -8,7 +8,8 @@ import java.util.List;
 @Entity
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator="my_seq")
+    @SequenceGenerator(name="my_seq",sequenceName="SEQ_CURSO", allocationSize=1)
     private Long id;
     @Size(min=3,max=5,message = "Cantidad de caracteres inválidos para el nombre")
     private String name;
@@ -57,5 +58,14 @@ public class Employee {
 
     public void setAllDepartments(List<Department> allDepartments) {
         this.allDepartments = allDepartments;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

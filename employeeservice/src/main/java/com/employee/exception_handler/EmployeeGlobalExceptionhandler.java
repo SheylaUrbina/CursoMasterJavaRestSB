@@ -20,19 +20,21 @@ public class EmployeeGlobalExceptionhandler extends ResponseEntityExceptionHandl
     public ResponseEntity<Object> handleAllException(Exception ex, WebRequest request){
         System.out.println("Esto es un cambio");
         EmployeeExceptionResponse exception = new EmployeeExceptionResponse(ex.getMessage(),request.getDescription(false),new Date());
-       return new ResponseEntity<Object>(exception, HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<Object>(exception, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(EmployeeNotFound.class)
     public ResponseEntity<Object> handleEmployeeNotFoundException(Exception ex, WebRequest request){
         System.out.println("En metodo EmployeeNotFound");
-        EmployeeExceptionResponse exception = new EmployeeExceptionResponse(ex.getMessage(),request.getDescription(false),new Date());
+        EmployeeExceptionResponse exception = new EmployeeExceptionResponse("Registro NO encontrado",request.getDescription(false),new Date());
         return new ResponseEntity<Object>(exception, HttpStatus.NOT_FOUND);
     }
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-        EmployeeExceptionResponse exception = new EmployeeExceptionResponse("Invalid input",ex.getBindingResult().toString(),new Date());
+        EmployeeExceptionResponse exception = new EmployeeExceptionResponse("Revisar numero de caracteres",ex.getBindingResult().toString(),new Date());
         return new ResponseEntity<Object>(exception, HttpStatus.BAD_REQUEST);
     }
+
+
 }

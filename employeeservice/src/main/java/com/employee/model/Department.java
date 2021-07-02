@@ -2,14 +2,13 @@ package com.employee.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Department {
     @Id
+    @GeneratedValue(generator="my_seq_dep")
+    @SequenceGenerator(name="my_seq_dep",sequenceName="SEQ_CURSO_DEPT", allocationSize=1)
     private Long id;
     private String department;
     @JsonIgnore
